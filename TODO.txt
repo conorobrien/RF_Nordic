@@ -1,0 +1,10 @@
+RF_Nordic.cpp
+HIGH PRIORITY
+-Write everything not currently a function into library functions, add functions for single-byte commands
+-Rework TX function, split the changing address to a seperate function rather than rewriting it every time. Maybe change send to a blocking function? Command send, then poll interrupt until change, then check STATUS for MAX_RT or TX_DS. Can return a 1(success) or 0(failure) instead of the STATUS register
+
+LOW PRIORITY
+-Maybe switch over to class-based? Would allow access to public variables rather than passing everything to functions. That might make sizeof() usable rather than passing byte lengths to everything
+-Write help for functions in the header file
+-Can probably take the return status out of most functions, it'll be its own command if I need it. Haven't used it so far
+-Figure out dynamic payload length, could be nice but adds extra step to reading messages.
