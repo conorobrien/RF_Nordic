@@ -97,10 +97,10 @@ void RFpipeShutdown(byte pipe)
   RFwriteReg(EN_RXADDR,writeDat,1);
 }
 
-byte RFtx(byte* data_out, byte*tx_address)
+byte RFtx(byte* data_out)
 {
-  RFpipeSetup(0, tx_address);
-  //Load message into FIFO and set addresses for TX and auto-ack
+
+  //Load message into FIFO
   digitalWrite(SS_PIN, LOW);
   SPI.transfer(W_TX_PAYLOAD);
   for (int i=0; i<= (_msg_length - 1); i++)
@@ -108,19 +108,20 @@ byte RFtx(byte* data_out, byte*tx_address)
     SPI.transfer(data_out[i]);
   }
   digitalWrite(SS_PIN,HIGH);
-  delayMicroseconds(1);
 
-  RFwriteReg(TX_ADDR, tx_address, 5);
-  RFwriteReg(RX_ADDR_P0, tx_address, 5);
-  
-  digitalWrite(9, HIGH);
+  // Pulse CE to initiate transfer
+  digitalWrite(CE_PIN, HIGH);
   delayMicroseconds(20);
-  digitalWrite(9, LOW);
+  digitalWrite(CE_PIN, LOW);
 
-  //Currently doesn't wait for auto-acks, when this function definitely works then create a blocking function, or at least check the tx FIFO for that pipe
+  // Blocking funtion until 
+  while (!digitalRead(IRQ_PIN) && (i <=));
 }
 
 byte RFtxAddress(byte* tx_address)
 {
-  //move adress and pipe setup to this function, don't want to redo it every time we sent a package, just when a new reciever
+
+  //Write tx_address into the TX_ADDR and the pipe0 rx address for auto-acks
+  RFwriteReg(TX_ADDR, tx_address, 5);
+  RFwriteReg(RX_ADDR_P0, tx_address, 5);
 }

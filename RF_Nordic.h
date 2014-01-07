@@ -7,7 +7,8 @@
 byte RFwriteReg(byte reg, byte* data_out, char num_bytes);
 byte RFreadReg(byte reg, byte* data_in, char num_bytes);
 byte RFreadStatus();
-byte RFtx(byte* data_out, byte* tx_address);
+byte RFtx(byte* data_out);
+byte RFtxAddress(byte* tx_address);
 void RFrx(byte* data_in);
 void RFsetup(char msg_length,byte* rx_address);
 void RFpipeSetup(byte pipe, byte* pipe_address);

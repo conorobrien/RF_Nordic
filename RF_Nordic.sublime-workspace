@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"status",
+				"_status_byte"
+			],
+			[
 				"RFpi",
 				"RFpipeSetup"
 			],
@@ -55,7 +59,7 @@
 			"file": "RF_Nordic.cpp",
 			"settings":
 			{
-				"buffer_size": 3453,
+				"buffer_size": 3256,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,8 +67,16 @@
 			"file": "RF_Nordic.h",
 			"settings":
 			{
-				"buffer_size": 2666,
+				"buffer_size": 2684,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "TODO.txt",
+			"settings":
+			{
+				"buffer_size": 910,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -205,20 +217,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3453,
+						"buffer_size": 3256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								60,
-								60
+								3174,
+								3174
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino/Arduino.tmLanguage",
+							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -226,7 +238,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -241,30 +253,58 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2666,
+						"buffer_size": 2684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								200,
-								200
+								452,
+								452
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino/Arduino.tmLanguage"
+							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "TODO.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "examples/PRX_Setup_Test/PRX_Setup_Test.ino",
 					"semi_transient": false,
 					"settings":
@@ -282,7 +322,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino/Arduino.tmLanguage",
+							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -293,7 +333,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "examples/PTX_Setup_Test/PTX_Setup_Test.ino",
 					"semi_transient": false,
 					"settings":
@@ -311,14 +351,14 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino/Arduino.tmLanguage",
+							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -352,7 +392,7 @@
 		"cols":
 		[
 			0.0,
-			0.574295682191,
+			0.614046266758,
 			1.0
 		],
 		"rows":
