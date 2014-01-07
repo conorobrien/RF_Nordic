@@ -17,9 +17,10 @@ void RFpipeShutdown(byte pipe);
 #define SS_PIN 10
 #define CE_PIN 9
 #define IRQ_PIN 8
-#define DEFAULT_CONFIG 0x0a
-#define DEFAULT_RETR 0x03
-// Command mnemonics written to nRF24L01+
+#define DEFAULT_CONFIG 0x0b 		
+#define DEFAULT_SETUP_RETR 0x1a
+
+// Command mnemonic for nRF24L01+
 #define R_REGISTER    	(0x00)
 #define W_REGISTER   	(0x20)
 #define R_RX_PAYLOAD  	(0x61)
@@ -34,7 +35,7 @@ void RFpipeShutdown(byte pipe);
 #define NOP         	(0xff)
 
 
-// Register and Bit Mnemonics
+// Register and Bit Mnemonic
 #define CONFIG      (0x00)
 #define MASK_RX_DR	6
 #define MASK_TX_DS	5
