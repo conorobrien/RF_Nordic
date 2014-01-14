@@ -4,22 +4,22 @@
 #include "Arduino.h"
 
 
-byte RFwriteReg(byte reg, byte* data_out, char num_bytes);
-byte RFreadReg(byte reg, byte* data_in, char num_bytes);
-byte RFreadStatus();
-byte RFtx(byte* data_out);
-byte RFtxAddress(byte* tx_address);
-void RFrx(byte* data_in);
-void RFsetup(char msg_length,byte* rx_address);
-void RFpipeSetup(byte pipe, byte* pipe_address);
-void RFpipeShutdown(byte pipe);
-
+byte RF_writeReg(byte reg, byte* data_out, char num_bytes);
+byte RF_readReg(byte reg, byte* data_in, char num_bytes);
+void RF_setup(byte msg_length,byte* rx_address);
+byte RF_status(void);
+byte RF_tx(byte* data_out);
+byte RF_txAddress(byte* tx_address);
+byte RF_rx(byte* data_in);
+byte RF_rxAvailable(void);
+void RF_flushRX(void);
+void RF_flushTX(void);
+void RF_resetInterrupt(char interrupt); 
+void RF_printReg(void);
 
 #define SS_PIN 10
 #define CE_PIN 9
-#define IRQ_PIN 8
-#define DEFAULT_CONFIG 0x0b 		
-#define DEFAULT_SETUP_RETR 0x1a
+#define IRQ_PIN 14
 
 // Command mnemonic for nRF24L01+
 #define R_REGISTER    	(0x00)
@@ -89,7 +89,7 @@ void RFpipeShutdown(byte pipe);
 #define PLOS_CNT 	4 		//BITS 7:4
 #define ARC_CNT 	0 		//BITS 3:0
 
-#define CD          (0x09)
+#define RPD          (0x09)
 
 //Pipe Addresses and control registers (see datasheet)
 #define RX_ADDR_P0  (0x0a)
